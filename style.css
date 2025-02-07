@@ -1,0 +1,133 @@
+body {
+    text-align: center;
+    background: linear-gradient(45deg, #9addff, #fad0c4);
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+h1 {
+    font-size: 50px;
+    color: #fff;
+    text-shadow: 2px 2px 5px #ff4d4d;
+}
+
+.scene {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0px; /* 缩小间距，让小人站得更近 */
+    margin-left: -30px; /* 向左移动整个内容 */
+    margin-top: 20px;
+    position: relative;
+}
+
+.character {
+    width: 320px;
+    height: auto;
+    image-rendering: pixelated;
+}
+
+.left {
+    transform: scaleX(-1); /* 左边的小人镜像翻转 */
+}
+
+.cake-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-right: 20px; /* 让蛋糕往左移一点 */
+}
+
+.cake {
+    width: 200px;
+    height: auto;
+    image-rendering: pixelated;
+}
+
+.heart {
+    width: 240px;
+    position: absolute;
+    top: -180px;
+    animation: float 2s infinite alternate ease-in-out;
+    margin-right: -20px;
+}
+#play-music {
+    position: absolute;
+    bottom: 210px; /* 保持按钮在蛋糕下方 */
+    left: 48.5%; /* 向右移，调整为合适的比例 */
+    transform: translateX(-50%); /* 依然居中，但是可以通过调整left来控制偏移 */
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ff7f50;
+    border: none;
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+}
+.love-message {
+    text-align: center;
+    margin-top: -130px;
+    font-size: 25px;
+    color: #ed7db5; /* 你可以更改为自己喜欢的颜色 */
+    font-family: 'Arial', sans-serif;
+}
+
+.love-message p {
+    margin: 0;
+}
+#message {
+    display: inline-block;
+    margin: 100px;  /* 为容器设置上下左右的外边距 */
+    word-wrap: break-word;  /* 保证文字自动换行 */
+    max-width: 90%;  /* 限制最大宽度为90%，避免文字超出 */
+    white-space: normal;  /* 允许自动换行 */
+    padding-right: 5px;  /* 光标的宽度 */
+    border-right: 2px solid;  /* 光标效果 */
+    font-size: 24px;  /* 文字大小，根据需要调整 */
+    line-height: 1.5;  /* 行高，确保文字间距合适 */
+    margin-top: -0px; 
+    padding-top: 10px;  /* 调整顶部的 padding */
+    padding-bottom: 20px;  /* 增加底部的 padding 以便显示底部文字 */
+}
+
+/* 打字动画 */
+@keyframes typing {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+/* 光标闪烁效果 */
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+body {
+    min-height: 100vh;  /* 确保页面至少占满屏幕 */
+    overflow-y: auto;  /* 允许垂直滚动 */
+}
+.container {
+    overflow-y: auto;
+}
+/* 定义上下跳动的动画 */
+@keyframes bounceUpDown {
+    0% {
+        transform: translateY(0);  /* 初始位置 */
+    }
+    50% {
+        transform: translateY(-20px); /* 向上跳 */
+    }
+    100% {
+        transform: translateY(0);  /* 恢复到原位置 */
+    }
+}
+
+/* 应用动画到大爱心的图片 */
+.heart {
+    animation: bounceUpDown 1s ease-in-out infinite; /* 无限循环上下跳动 */
+}
